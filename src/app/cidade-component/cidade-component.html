@@ -32,33 +32,20 @@
   <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button> 
   </form>
 
-    <br>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Preço</th>
-    </tr>
-  </thead>
-  <tbody>
-    </table>
-
-</div>
-  <div class="row g-3">
-    <div class="col-md-4"
-    *ngFor="let cidade of cidades">
-      <div class="card shadow-sm h-100">
-        <div class="card-body">
-          <h5 class="card-title">{{ cidade.nome }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ cidade.estado }}</h6>
-          <p class="card-text">
-            <strong>ID:</strong> {{ cidade.id }} <br>
-            <strong>População:</strong> {{ cidade.populacao }} <br>
-            <strong>Região:</strong> {{ cidade.regiao }}
-          </p>
-        </div>
+  <br>
+  
+<div class="row g-3">
+  <div class="col-md-4" *ngFor="let cidade of cidades">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        {{ cidade.nome }}
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Estado:</strong> {{ cidade.estado }}</li>
+        <li class="list-group-item"><strong>ID:</strong> {{ cidade.id }}</li>
+        <li class="list-group-item"><strong>População:</strong> {{ cidade.populacao }}</li>
+        <li class="list-group-item"><strong>Região:</strong> {{ cidade.regiao }}</li>
+      </ul>
     </div>
   </div>
+</div>
