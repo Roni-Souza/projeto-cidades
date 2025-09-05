@@ -1,0 +1,64 @@
+<div class="container">
+
+<div class="display-4 text-center">Cadastro de Cidade</div>
+
+<form [formGroup]="formGroupCidade">
+
+<div class="mb-3">
+      <label for="inputId" class="form-label">id</label>
+      <input formControlName="id"  type="text" class="form-control" id="inputid">
+    </div>
+
+   <div class="mb-3">
+      <label for="inputnome" class="form-label">Nome</label>
+      <input formControlName="nome"  type="text" class="form-control" id="inputnome">
+    </div>
+    
+    <div class="mb-3">
+      <label for="inputEstado" class="form-label">Estado</label>
+      <input formControlName="estado" type="text" class="form-control" id="inputestado">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputPopulacao" class="form-label">Populacao</label>
+      <input formControlName="populacao"   type="text" class="form-control" id="inputpopulacao">
+    </div>
+  
+    <div class="mb-3">
+      <label for="inputRegiao" class="form-label">Região</label>
+      <input formControlName="regiao"   type="text" class="form-control" id="inputregiao">
+    </div>
+
+  <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button> 
+  </form>
+
+    <br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    </table>
+
+</div>
+  <div class="row g-3">
+    <div class="col-md-4"
+    *ngFor="let cidade of cidades">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ cidade.nome }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ cidade.estado }}</h6>
+          <p class="card-text">
+            <strong>ID:</strong> {{ cidade.id }} <br>
+            <strong>População:</strong> {{ cidade.populacao }} <br>
+            <strong>Região:</strong> {{ cidade.regiao }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
